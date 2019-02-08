@@ -11,9 +11,15 @@ namespace MsTest.Comparison.ClassInitialize
         {
             //initialize once per class
             TestInitializer.Init(TestInitializer.MsTest + " - " + nameof(ClassInitialize));
+		}
+
+        [ClassCleanup]
+        public static void Cleanup()
+        {
+	        TestInitializer.Cleanup(TestInitializer.MsTest + " - " + nameof(ClassInitialize));
         }
 
-        [TestMethod]
+		[TestMethod]
         public void Test1()
         {
             //Arrange/Act/Assert

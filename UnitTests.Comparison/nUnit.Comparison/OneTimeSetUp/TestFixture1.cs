@@ -10,9 +10,15 @@ namespace nUnit.Comparison.OneTimeSetUp
         {
             //initialize once per class
             TestInitializer.Init(TestInitializer.nUnit + " - " + nameof(OneTimeSetUp));
+		}
+
+        [OneTimeTearDown]
+        public void TearDown()
+        {
+	        TestInitializer.Cleanup(TestInitializer.nUnit + " - " + nameof(OneTimeSetUp));
         }
 
-        [Test]
+		[Test]
         public void Test1()
         {
             //Arrange/Act/Assert

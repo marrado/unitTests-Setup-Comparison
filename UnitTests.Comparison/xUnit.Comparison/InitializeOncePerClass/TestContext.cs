@@ -11,7 +11,8 @@ namespace xUnit.Comparison.InitializeOncePerClass
         }
 
         public void Dispose()
-        {
-        }
+		{
+			TestInitializer.Cleanup(TestInitializer.xUnit + " - " + nameof(InitializeOncePerClass));
+		}
     }
 }

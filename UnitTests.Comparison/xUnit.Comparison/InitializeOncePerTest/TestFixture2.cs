@@ -1,13 +1,14 @@
-﻿using UnitTests.Comparison;
+﻿using System;
+using UnitTests.Comparison;
 using Xunit;
 
-namespace xUnit.Comparison.InitilizeOncePerTest
+namespace xUnit.Comparison.InitializeOncePerTest
 {
-    public class TestFixture2
+    public class TestFixture2 : IDisposable
     {
         public TestFixture2()
         {
-            TestInitializer.Init(TestInitializer.xUnit + " - " + nameof(InitilizeOncePerTest));
+            TestInitializer.Init(TestInitializer.xUnit + " - " + nameof(InitializeOncePerTest));
         }
 
         [Fact]
@@ -29,5 +30,10 @@ namespace xUnit.Comparison.InitilizeOncePerTest
         {
             //Arrange/Act/Assert
         }
+
+        public void Dispose()
+		{
+			TestInitializer.Cleanup(TestInitializer.xUnit + " - " + nameof(InitializeOnce));
+		}
     }
 }

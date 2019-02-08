@@ -15,8 +15,13 @@ namespace UnitTests.Comparison
         /// </summary>
         public static void Init(string callerName)
         {
-            Debug.WriteLine($"Init at {callerName}");
+            Debug.WriteLine($"{nameof(Init)} at {callerName}");
             Thread.Sleep(1000);
         }
+
+        public static void Cleanup(string callerName)
+		{
+			Debug.WriteLine($"{nameof(Cleanup)} at {callerName}");
+		}
     }
 }

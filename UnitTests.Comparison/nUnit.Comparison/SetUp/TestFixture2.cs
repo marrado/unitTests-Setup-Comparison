@@ -10,9 +10,15 @@ namespace nUnit.Comparison.SetUp
         {
             //initialize every test separately
             TestInitializer.Init(TestInitializer.nUnit + " - " + nameof(SetUp));
+		}
+
+        [TearDown]
+        public void TearDown()
+        {
+	        TestInitializer.Cleanup(TestInitializer.nUnit + " - " + nameof(SetUp));
         }
 
-        [Test]
+		[Test]
         public void Test1()
         {
             //Arrange/Act/Assert

@@ -11,6 +11,12 @@ namespace nUnit.Comparison.SetUpFixture
         {
             //initialize once per all tests in the namespace
             TestInitializer.Init(TestInitializer.nUnit + " - " + nameof(SetUpFixture));
-        }
-    }
+		}
+
+		[OneTimeTearDown]
+		public void TearDown()
+		{
+			TestInitializer.Cleanup(TestInitializer.nUnit + " - " + nameof(SetUpFixture));
+		}
+	}
 }

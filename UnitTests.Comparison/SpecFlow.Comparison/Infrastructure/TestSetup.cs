@@ -12,6 +12,8 @@ namespace SpecFlow.Comparison.Infrastructure
     [Binding]
     public class TestSetup
     {
+		//the comparisons below are generalized, as those steps are translated to any chosen framework
+		//in this example they are translated to xUnit
         //like AssemblyInitialize
         [BeforeTestRun]
         public static void BeforeTestRun()
@@ -32,5 +34,23 @@ namespace SpecFlow.Comparison.Infrastructure
         {
             TestInitializer.Init(TestInitializer.SpecFlow + " - " + nameof(BeforeScenario));
         }
-    }
+
+        [AfterTestRun]
+        public static void AfterTestRun()
+        {
+	        TestInitializer.Cleanup(TestInitializer.SpecFlow + " - " + nameof(BeforeTestRun));
+        }
+
+        [AfterFeature]
+        public static void AfterFeature()
+        {
+	        TestInitializer.Cleanup(TestInitializer.SpecFlow + " - " + nameof(BeforeFeature));
+        }
+		
+        [AfterScenario]
+        public void AfterScenario()
+        {
+	        TestInitializer.Cleanup(TestInitializer.SpecFlow + " - " + nameof(BeforeScenario));
+        }
+	}
 }

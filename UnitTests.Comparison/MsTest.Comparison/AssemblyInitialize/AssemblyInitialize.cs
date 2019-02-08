@@ -12,5 +12,11 @@ namespace MsTest.Comparison.AssemblyInitialize
             //initialize once per assembly
             TestInitializer.Init(TestInitializer.MsTest + " - " + nameof(AssemblyInitialize));
         }
-    }
+
+        [AssemblyCleanup]
+        public static void Cleanup()
+        {
+	        TestInitializer.Cleanup(TestInitializer.MsTest + " - " + nameof(AssemblyInitialize));
+        }
+	}
 }

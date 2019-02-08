@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/UnitTests.Comparison/.vs/UnitTests.Comparison/v15/Server/sqlite3
+/UnitTests.Comparison/MsTest.Comparison/bin/Debug/netcoreapp2.1
+/UnitTests.Comparison/MsTest.Comparison/obj
+/UnitTests.Comparison/nUnit.Comparison/bin/Debug/netcoreapp2.1
+/UnitTests.Comparison/nUnit.Comparison/obj
+/UnitTests.Comparison/SpecFlow.Comparison/bin/Debug/netcoreapp2.1
+/UnitTests.Comparison/SpecFlow.Comparison/obj
+/UnitTests.Comparison/UnitTests.Comparison/bin/Debug/netcoreapp2.1
+/UnitTests.Comparison/UnitTests.Comparison/obj/Debug/netcoreapp2.1
+/UnitTests.Comparison/UnitTests.Comparison/obj
+/UnitTests.Comparison/xUnit.Comparison/bin/Debug/netcoreapp2.1
+/UnitTests.Comparison/xUnit.Comparison/obj/Debug/netcoreapp2.1
+/UnitTests.Comparison/xUnit.Comparison/obj
+*.user

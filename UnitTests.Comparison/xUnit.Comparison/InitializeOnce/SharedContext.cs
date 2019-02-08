@@ -12,6 +12,7 @@ namespace xUnit.Comparison.InitializeOnce
 
         public void Dispose()
         {
+			TestInitializer.Cleanup(TestInitializer.xUnit + " - " + nameof(InitializeOnce));
         }
     }
 }
